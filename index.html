@@ -18,7 +18,7 @@
 
     <script>
         // B页面监听到A页面消息并显示
-        window.addEventListener('messages', function(event) {
+        window.addEventListener('message', function(event) {
             console.log(event, event.origin, event.data);
             document.getElementById('zhujian').innerHTML = event.data;
             // B页面接收到A页面发送的消息主动向A页面发送消息
