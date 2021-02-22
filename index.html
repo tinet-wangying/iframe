@@ -21,6 +21,8 @@
         window.addEventListener('message', function(event) {
             console.log(event, event.origin, event.data);
             document.getElementById('zhujian').innerHTML = event.data;
+            // B页面接收到A页面发送的消息主动向A页面发送消息
+            top.postMessage("B页面收到消息并且发送到A页面", 'https://tinet-yangjt.github.io/test/')
         })
     </script>
 </body>
