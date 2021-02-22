@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B页面</title>
+    <title>测试页面B</title>
 </head>
 
 <body>
-    <div>111111111</div>
+    <div>这是B页面测试iframe跨域通信使用</div>
+
+
+    <div>
+        <p>监听A页面传输的数据</p>
+        <p id="zhujian" style="color: red;"></p>
+    </div>
+
+    <script>
+        // B页面监听到A页面消息并显示
+        window.addEventListener('message', function(event) {
+            console.log(event, event.origin, event.data);
+            document.getElementById('zhujian').innerHTML = event.data;
+        })
+    </script>
 </body>
 
 </html>
